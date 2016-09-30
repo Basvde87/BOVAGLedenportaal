@@ -38,7 +38,7 @@ gulp.task('html', function () {
     return gulp.src([
         'app/**/*.html',
         '!app/html-components/**',
-				'!app/kentico-components/**'
+		'!app/kentico-components/**'
     ])
 
     .pipe(fileinclude({
@@ -101,7 +101,7 @@ gulp.task('js', function () {
 
 /* ---- FONTS TASKS ---- */
 gulp.task('fonts', function () {
-    return gulp.src('app/assets/fonts/**/*')
+    return gulp.src('app/assets/fonts/**')
         .pipe(gulp.dest('dist/assets/fonts/'))
         .pipe(gulp.dest('assets/fonts/'))
         .pipe(browserSync.reload({ stream: true, once: true }));
@@ -110,7 +110,7 @@ gulp.task('fonts', function () {
 
 /* ---- SVG TASKS ---- */
 gulp.task('svg', function () {
-    return gulp.src('app/assets/img/*.svg')
+    return gulp.src('app/assets/img/**/*.svg')
         .pipe(svgmin())
         .pipe(gulp.dest('dist/assets/img'))
         .pipe(gulp.dest('assets/img'))
